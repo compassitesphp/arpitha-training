@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
 <title>Employee List</title>
@@ -10,6 +9,7 @@
 <body>
     
    				 <?php
+                   echo "***"; exit;
 
    				 	include 'db.php';
 
@@ -20,7 +20,6 @@
 				   $result=$conn->query($sql);
 				   echo "<div class='container'>";
 				   echo "<h2>Employee details</h2>";
-                 
 					if ($result->num_rows > 0) 
 					{
 						
@@ -48,11 +47,6 @@
 								echo "<td><a href=";
 								echo "'http://localhost/employee_conn/update2.php?emp_id=" . $row['emp_id'] . "'";
 								echo "'>edit</a></td>";
-
-								echo "<td><a href=";
-								echo "'http://localhost/employee_conn/app2.html?emp_id=" . $row['emp_id'] . "'";
-								echo "'>Insert</a></td>";
-
 					        	
 								echo "<td><a href=";
 								echo "'http://localhost/employee_conn/delete1.php?emp_id=" . $row['emp_id'] . "'";
@@ -63,6 +57,7 @@
 
 						echo "</tbody>";
 						echo "</table>";		
+						echo "<a href='http://localhost/employee_conn/app2.html'>Insert Record</a>";
 						
 					}
 
