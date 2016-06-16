@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Employee details</title>
+<title>Employee List</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
