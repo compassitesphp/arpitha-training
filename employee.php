@@ -65,7 +65,7 @@
 					{
 						echo "no record were found";
 					}
-				<input type="button" value="Delete" onclick="return confirm('Delete this Record?');"/>
+				echo "<input type='button' value='Delete'/>";
 
 					echo "</div >";
 
