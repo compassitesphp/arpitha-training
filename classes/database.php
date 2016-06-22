@@ -1,13 +1,13 @@
 <?php
 
-   //public 
-	$servernmae="localhost";
-   //public
-    $username="arpitha";
-   //public
-    $password="compass";
-   //public 
-    $dbname="employee";
+   
+	private $servernmae="localhost";
+   
+    private $username="arpitha";
+   
+    private $password="compass";
+    
+    private $dbname="employee";
 
 
 
