@@ -3,13 +3,14 @@
 <title>Employee List</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
   <link rel="stylesheet" href="insert.css">
 </head>
 <body>
     
    				 <?php
-                   echo "***"; exit;
+                   //echo "***"; exit;
 
    				 	include 'db.php';
 
@@ -49,7 +50,7 @@
 								echo "'>edit</a></td>";
 					        	
 								echo "<td><a href=";
-								echo "'http://localhost/employee_conn/delete1.php?emp_id=" . $row['emp_id'] . "'";
+								echo "'http://localhost/employee_conn/delete1.html?emp_id=" . $row['emp_id'] . "'";
 								echo "'>delete</a></td>";
 
 							echo "</tr>";
@@ -65,7 +66,7 @@
 					{
 						echo "no record were found";
 					}
-				echo "<input type='button' value='Delete'/>";
+				//echo "<input type='button' value='Delete'/>";
 
 					echo "</div >";
 

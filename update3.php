@@ -34,4 +34,7 @@ if (!mysql_query($sqlQuery))
 
 echo "updated the record";
 
+echo "<a href='http://localhost/arpitha-training/employee.php'";
+echo ">' homepage";
+echo "</a>";
 ?>

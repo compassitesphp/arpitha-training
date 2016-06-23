@@ -30,9 +30,9 @@ if ($result->num_rows > 0)
 			echo "<th>Employee ID</th>";
 			echo "<th>emp_name</th>";
 			echo "<th>emp_email</th>";
-			echo "<th>emp_department</th>"
+			echo "<th>emp_department</th>";
 		echo "</tr>";
-
+                        
 	while($row=mysqli_fetch_array($result))
 	{
 		echo"<tr>";
