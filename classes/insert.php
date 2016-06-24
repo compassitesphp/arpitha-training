@@ -1,31 +1,21 @@
-<?php
+<!DOCTYPE html>
+<html>
 
+<h2>Enter the Employee details</h2>
+<br><br>
 
-include 'database.php';
-$employee =new Employee("localhost","shilpa","compass","employee");
+<form action="insert.php" method="GET">
+Name:
+<input type="text" name="emp_name" required>
+<br><br>
 
-$conn=$employee->connect();
+Email:
+<input type="email" name="emp_email" required placeholder="Enter a valid email address">
+<br><br>
 
-$empId=$_GET['emp_id'];
-$empName=$_GET['emp_name'];
-$empEmail=$_GET['emp_email'];
-$empDepartment=$_GET['emp_department'];
+Department: 
+<input type="text" name="emp_department" />
+<br><br>
 
-$tableName="employee_info";
-
-if(!$employee->insert($tableName,$empId,$empName,$empEmail,$empDepartment,$conn))
-{
-	die('Error: ' . $conn->error());
-}
-
-else
-
-    echo " 1 record added  ";
-$conn->close();
-
-echo "<a href='http://localhost/shilpashree-traning/employee_conn_class/list.php'>   home page</a>" ;
-
-
-
-
-?>
+<input type="button" value="Update" />
+</html> 

@@ -16,14 +16,11 @@
    				 	include 'dbclass.php';
 
                    $employee =new dbclass("localhost","arpitha","compass","employee");
-                  // $connection=$employee->connect();
-				   
-				  // $sql="select * from employee_info";
-				  // $result=$connection->query($sql);
-                  $result= $employee->getAll();
+                   $result= $employee->getAll();
+                  
+	
 				   echo "<div class='container'>";
 				   echo "<h2>Employee details</h2>";
-                 
 					if ($result->num_rows > 0) 
 					{
 						
@@ -49,25 +46,30 @@
 								echo "<td>" . $row['emp_department'] . "</td>";
 
 								echo "<td><a href=";
-								echo "'http://localhost/arpitha-training/classes/update.php?emp_id=" . $row['emp_id'] . "'";
+								echo "'http://localhost/arpitha_training/classes/update.php?emp_id=" . $row['emp_id'] . "'";
 								echo "'>edit</a></td>";
-                                                                echo "<td><a href=";
-								echo "'http://localhost/arpitha-training/classes/delete.php?emp_id=" . $row['emp_id'] . "'";
+					        	
+								echo "<td><a href=";
+								echo "'http://localhost/arpitha_training/classes/delete.php?emp_id=" . $row['emp_id'] . "'";
 								echo "'>delete</a></td>";
 
 							echo "</tr>";
-                                                        echo "</tbody>";
+						}
+
+						echo "</tbody>";
 						echo "</table>";		
-						echo "<a href='http://localhost/employee_conn/insert.html'>Insert Record</a>";
+						echo "<a href='http://localhost/arpitha_training/classes/insert.html'>Insert Record</a>";
 						
 					}
-                                         else
+
+					else
 					{
 						echo "no record were found";
 					}
-				
-					echo "</div >";
+				//echo "<input type='button' value='Delete'/>";
 
+					echo "</div >";
+					
 ?>
 </body>
 </html>

@@ -1,26 +1,17 @@
-<?php
-include 'dbclass.php';
-$employee =new Employee("localhost","arpitha","compass","employee");
+<<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Enter the Id</h2>
+
+<form action="delete1.php" method="GET">
+Id:
+<input type="text" name="emp_id" />
+<br><br>
 
 
-$conn=$employee->connect();
 
-$empId=$_GET['emp_id'];
-$empName=$_GET['emp_name'];
-$empEmail=$_GET['emp_email'];
-$empDepartment=$_GET['emp_department'];
-
-//$tableName="employee_info";
-
-if(!$employee->delete($empId,$conn))
-{
-	die('Error: ' . $conn->error());
-}
-else
-
-	echo "deleted  the record  ";
-$conn->close();
-
-echo "<a href='http://localhost/arpitha-traning/arpitha-training/classes/index.php'>   home page</a>" ;
-
-?>
+<input type="button" value="Delete"/>
+</form> 
+</body>
+</html>
