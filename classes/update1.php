@@ -1,31 +1,25 @@
-<?php
+<!DOCTYPE html>
+<html>
+    <body>
 
+        <h2>Enter the employee details</h2>
+        <?php
+        include 'dbclass.php';
+        $employee = new dbclass;
+        $employeeDetail = $employee->getEmployee($_GET['emp_id']);
+        $employeeRow = mysqli_fetch_array($employeeDetail);
+        ?>
+        <form name="update_employee" action="update2.php" method="GET">
+            <span>Employee ID:</span><input type="text" name="emp_id" value="<?php echo $employeeRow['emp_id']; ?>"/><br><br>
+            <span>Name:</span> <input type="text" name="emp_name" required value="<?php echo $employeeRow['emp_name']; ?>"/>
+            <br><br>
+            <span>E-mail:</span> <input type="text" name="emp_email" required placeholder="Enter a valid email address"value="<?php echo $employeeRow['emp_email']; ?>"/><br><br>
+            <span>Department:</span> <input type="text" name="emp_department" value="<?php echo $employeeRow['emp_department']; ?>"/><br><br>
 
-include 'dbclass.php';
-$employee =new Employee("localhost","arpitha","compass","employee");
+            <input type="submit"> 
 
-$conn=$employee->connect();
+        </form>
 
-$emp_id=$_GET['emp_id'];
-$emp_name=$_GET['emp_name'];
-$emp_email=$_GET['emp_email'];
-$emp_department=$_GET['emp_department'];
+    </body>
+</html>
 
-
-
-if(!$employee->insert($emp_id,$emp_name,$emp_email,$emp_department))
-{
-	die('Error: ' . $conn->error());
-}
-
-else
-
-    echo " 1 record added  ";
-$conn->close();
-
-echo "<a href='http://localhost/arpitha-traning/classes/index.php'>   home page</a>" ;
-
-
-
-
-?>

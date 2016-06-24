@@ -2,26 +2,25 @@
 
 
 include 'dbclass.php';
-$employee =new Employee("localhost","arpitha","compass","employee");
+$employee =new dbclass;
 
-$conn=$employee->connect();
-$empId=$_GET['emp_id'];
 $empName=$_GET['emp_name'];
 $empEmail=$_GET['emp_email'];
 $empDepartment=$_GET['emp_department'];
 
+//$employee->insert($empName, $empEmail, $empDepartment);
 
-if(!$employee->update($emp_id,$emp_name,$emp_email,$emp_department))
-{
-	die('Error: ' . $conn->error());
-}
-else
+if(!$employee->insert($empName, $empEmail, $empDepartment))
 
-	echo "updated the record  ";
-$conn->close();
+  {
 
-echo "<a href='http://localhost/arpitha-traning/classes/index.php'>   home page</a>" ;
+  die('Error: ' . mysql_error());
 
+  }
+
+echo "1 record added";
+
+echo "<a href='http://localhost/arpitha-training/classes/index.php'>   home page</a>" ;
 
 
 
