@@ -15,7 +15,8 @@ class dbclass {
 
     public function __construct() {
         $this->connection = mysqli_connect($this->host, $this->user, $this->password, $this->database);
-        if (mysqli_connect_errno()) {
+        if (mysqli_connect_errno())
+            {
             die('ERROR : Failed to connect to the database');
         }
     }
@@ -27,7 +28,7 @@ class dbclass {
     public function getEmployee($id) {
         return mysqli_query($this->connection, "select * from employee_info where emp_id=$id");
     }
-    
+
     public function insert($emp_name, $emp_email, $emp_department) {
         $sqlQuery = "insert into employee_info "
                 . "(emp_name, emp_email, emp_department) "
@@ -49,5 +50,7 @@ class dbclass {
         $result = $this->connection->query($sqlQuery);
         return $result;
     }
+
 }
+
 ?>
